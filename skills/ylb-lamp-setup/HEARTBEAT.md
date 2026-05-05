@@ -5,7 +5,7 @@
 每 8 次心跳检查一次（约每 4 小时，心跳间隔约 30 分钟）。自动拉起，不通知用户。
 
 ```bash
-DAEMON="${HOME}/.openclaw/skills/ylb-lamp-setup/scripts/lamp_daemon.py"
+DAEMON="${HOME}/.openclaw/workspace/skills/ylb-lamp-setup/scripts/lamp_daemon.py"
 OPENCLAW="${YLBLAMP_OPENCLAW:-${HOME}/.npm-global/bin/openclaw}"
 
 COUNTER_FILE="/tmp/lamp_health_counter"

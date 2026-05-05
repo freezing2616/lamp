@@ -45,7 +45,7 @@
 import paho.mqtt.client as mqtt, json, time, uuid, urllib.request
 
 # 1. 读 session
-d = json.load(open(os.path.expanduser("~/.openclaw/skills/.ylb-lamp/session.json")))  # $SESSION
+d = json.load(open(os.path.expanduser("~/.openclaw/workspace/skills/.ylb-lamp/session.json")))  # $SESSION
 token = d["token"]
 st = d["signal_topic"]
 sst = d["status_topic"]

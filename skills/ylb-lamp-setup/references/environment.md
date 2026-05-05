@@ -24,4 +24,4 @@ Content-Type: application/json
 ```
 
 ## Session 缓存路径
-`~/.openclaw/skills/.ylb-lamp/session.json`（即 `$SESSION`，所有 ylb-lamp Skill 共用）
+`~/.openclaw/workspace/skills/.ylb-lamp/session.json`（即 `$SESSION`，所有 ylb-lamp Skill 共用）

@@ -1,4 +1,4 @@
-# 认证流程（生产环境，已验证）
+# 登录&认证流程（生产环境，已验证）
 
 ## ⚠️ 最最重要的安全规则
 
@@ -7,6 +7,20 @@
 2. **用户把手机上收到的验证码告诉你** → 你用用户提供的验证码去登录
 
 > 你唯一能用的验证码，是用户手机上收到的短信，由用户主动告诉你。
+
+## ⚠️ 接口路径白名单（只有这三条存在，其他全是 404）
+
+| 用途 | 方法 | 路径 |
+|------|------|------|
+| 发验证码 | POST | `/sso/permit/v1/vercode` |
+| 手机号登录 | POST | `/sso/permit/v1/sms/login` |
+| 查群组 | GET | `/l1/usercenter/v1/groups/user` |
+
+> ❌ `/sso/permit/v1/sms/vercode` — 不存在，是幻觉，不要用
+> ❌ `/l1/usercenter/v1/login/sms` — 不存在，是幻觉，不要用
+> ❌ `/l1/auth/login` — 不存在，是幻觉，不要用
+>
+> 遇到 404 时，不要猜测新路径，停下来检查本文件的白名单。
 
 ## Step 1：通过云端给用户手机发短信（只判断，不读取验证码）
 
@@ -100,7 +114,7 @@ session = {
     "mqtt_url": f"wss://sensejupiter.sensetime.com/mqtt4/mqtt?authToken={token}",
     "initialized_at": int(time.time())
 }
-with open(os.path.expanduser("~/.openclaw/skills/.ylb-lamp/session.json"), "w") as f:  # $SESSION
+with open(os.path.expanduser("~/.openclaw/workspace/skills/.ylb-lamp/session.json"), "w") as f:  # $SESSION
     json.dump(session, f, indent=2)
 ```
 

@@ -8,7 +8,7 @@
 5. 保存到本地并打印路径（供 agent 返回给用户）
 
 环境变量（可覆盖）：
-  YLBLAMP_SESSION  session.json 路径（默认: ~/.openclaw/skills/.ylb-lamp/session.json）
+  YLBLAMP_SESSION  session.json 路径（默认: ~/.openclaw/workspace/skills/.ylb-lamp/session.json）
   YLBLAMP_PHOTOS   图片保存目录（默认: /tmp/lamp_photos）
 """
 import os, sys, time, random, string, json
@@ -17,7 +17,7 @@ import paho.mqtt.client as mqtt
 
 # ── 路径约定 ────────────────────────────────────────────────
 home = os.path.expanduser("~")
-SHARED       = os.path.join(home, ".openclaw", "skills", ".ylb-lamp")
+SHARED       = os.path.join(home, ".openclaw", "workspace", "skills", ".ylb-lamp")
 SESSION_FILE = os.environ.get("YLBLAMP_SESSION",
                     os.path.join(SHARED, "session.json"))
 SAVE_DIR     = os.environ.get("YLBLAMP_PHOTOS", "/tmp/lamp_photos")

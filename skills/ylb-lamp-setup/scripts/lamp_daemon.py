@@ -7,7 +7,7 @@
 - 通过文件与主进程通信，实现快速响应
 
 环境变量（可覆盖）：
-  YLBLAMP_SESSION    session.json 路径（默认: ~/.openclaw/skills/.ylb-lamp/session.json）
+  YLBLAMP_SESSION    session.json 路径（默认: ~/.openclaw/workspace/skills/.ylb-lamp/session.json）
   YLBLAMP_LOG        日志文件（默认: /tmp/lamp_daemon.log）
   YLBLAMP_FEISHU_TARGET  飞书推送目标用户ID
 """
@@ -18,7 +18,7 @@ import json, time, random, string, os, threading, subprocess
 def find_path():
     """解析 SHARED / OPENCLAW / SESSION_FILE 路径"""
     home = os.path.expanduser("~")
-    shared = os.path.join(home, ".openclaw", "skills", ".ylb-lamp")
+    shared = os.path.join(home, ".openclaw", "workspace", "skills", ".ylb-lamp")
 
     # OPENCLAW
     openclaw = os.environ.get("YLBLAMP_OPENCLAW", "")

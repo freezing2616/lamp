@@ -95,8 +95,8 @@ if __name__ == "__main__":
 
 ```python
 QUEUE = "/tmp/lamp_cmd_queue.txt"          # 命令队列（多 Skill 公用，重启自动清理）
-SESSION = "~/.openclaw/skills/.ylb-lamp/session.json"  # 登录凭证（setup 生成）
-SCRIPTS = "~/.openclaw/skills/ylb-lamp-setup/scripts"       # 公共原子脚本
+SESSION = "~/.openclaw/workspace/skills/.ylb-lamp/session.json"  # 登录凭证（setup 生成）
+SCRIPTS = "~/.openclaw/workspace/skills/ylb-lamp-setup/scripts"       # 公共原子脚本
 ```
 
 

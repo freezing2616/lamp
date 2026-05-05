@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-This is the **元萝卜（YuanLuoBo）光翼灯/龙虾灯 OpenClaw Skills** framework — a collection of Claude Code skills for controlling the SenseRobot Lamp via MQTT. Skills are deployed to `~/.openclaw/skills/` on the user's machine.
+This is the **元萝卜（YuanLuoBo）光翼灯/龙虾灯 OpenClaw Skills** framework — a collection of Claude Code skills for controlling the SenseRobot Lamp via MQTT. Skills are deployed to `~/.openclaw/workspace/skills/` on the user's machine.
 
 ## Skill Architecture
 
@@ -22,9 +22,9 @@ skills/
 
 **Shared runtime paths** (not in git, created at runtime):
 ```bash
-SHARED=~/.openclaw/skills/.ylb-lamp
+SHARED=~/.openclaw/workspace/skills/.ylb-lamp
 SESSION=$SHARED/session.json       # auth token + device info
-SCRIPTS=~/.openclaw/skills/ylb-lamp-setup/scripts
+SCRIPTS=~/.openclaw/workspace/skills/ylb-lamp-setup/scripts
 CMD_FILE=/tmp/lamp_cmd_queue.txt   # command queue
 LOG=/tmp/lamp_daemon.log
 PHOTOS=/tmp/lamp_photos/
@@ -101,7 +101,7 @@ client_id = "scchi_android_" + random_string
 python3 skills/ylb-lamp-test/scripts/lamp_smoke_test.py
 
 # Start daemon manually
-nohup python3 ~/.openclaw/skills/ylb-lamp-setup/scripts/lamp_daemon.py \
+nohup python3 ~/.openclaw/workspace/skills/ylb-lamp-setup/scripts/lamp_daemon.py \
   >> /tmp/lamp_daemon.log 2>&1 &
 
 # Check daemon status
@@ -109,7 +109,7 @@ pgrep -f lamp_daemon.py || echo "not running"
 tail -20 /tmp/lamp_daemon.log
 
 # Take a photo
-python3 ~/.openclaw/skills/ylb-lamp-setup/scripts/lamp_photo.py
+python3 ~/.openclaw/workspace/skills/ylb-lamp-setup/scripts/lamp_photo.py
 # Returns: SUCCESS:/tmp/lamp_photos/photo_YYYYMMDD_HHMMSS.jpg
 ```
 
