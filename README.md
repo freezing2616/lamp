@@ -28,7 +28,7 @@ https://github.com/SenseRobotClaw/lamp/tree/main/skills/ylb-lamp-elsa-story
 ## 部署到OpenClaw之后的目标目录结构
 
 ```
-~/.openclaw/skills/
+~/.openclaw/workspace/skills/
 │
 ├── .ylb-lamp/                        ← 三个 Skill 共用的运行时数据（不进 git）
 │   ├── session.json                  ← 登录凭证（运行时生成）
